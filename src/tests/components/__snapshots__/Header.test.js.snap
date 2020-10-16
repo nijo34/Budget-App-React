@@ -20,12 +20,5 @@ exports[`should render header correctly 1`] = `
   >
     Create
   </NavLink>
-  <NavLink
-    activeClassName="is-active"
-    ariaCurrent="true"
-    to="/edit/:id"
-  >
-    Edit
-  </NavLink>
 </header>
 `;
