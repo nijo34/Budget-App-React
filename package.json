@@ -7,7 +7,8 @@
   "scripts": {
     "serve": "live-server public/",
     "build-babel": "babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch",
-    "build": "webpack --watch --mode=development",
+    "build:dev": "webpack",
+    "build:prod":"webpack -p --env production",
     "dev-server": "webpack-dev-server",
     "test": "jest --config=jest.config.json"
   },
