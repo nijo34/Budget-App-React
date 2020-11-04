@@ -11,7 +11,7 @@ export const addExpense = (expense) =>({                                    //di
 export const startAddExpense = (expenseData = {})=>{                        //would dispatch the action generator and also update the db along with it.
     return (dispatch)=>{
         const {
-            description = '',   
+            description = '',    
             note= '',
             amount = 0,
             createdAt=0
@@ -43,3 +43,28 @@ export const editExpense =  (id,updates)=>({
    id, 
    updates
 })
+
+//SET_EXPENSES
+
+export const setExpenses = (expenses)=>({
+    type: 'SET_EXPENSES',
+    expenses
+})
+
+export const startSetExpenses= ()=>{
+    return (dispatch)=>{
+        return database.ref('expenses')
+        .once('value')
+        .then((snapshot)=>{                         //snapshot gives an object structure, therefore converting it into array structure
+            const expenses = []
+
+            snapshot.forEach((childSnapshot)=>{
+                 expenses.push({
+                     id:childSnapshot.key,
+                     ...childSnapshot.val()
+                 })
+            })
+            dispatch(setExpenses(expenses))
+        })   
+    }
+}
