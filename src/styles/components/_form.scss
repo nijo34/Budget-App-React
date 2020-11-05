@@ -1,0 +1,12 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    >* {                                                //direct descendants, style applies to all the direct descendants of the form selector. 
+        margin-bottom: $s-size; 
+    }
+}
+
+.form__error {
+    margin :0 0 $s-size 0;
+    font-style: italic;
+}

@@ -1,10 +1,17 @@
+* {
+     //box-sizing: content-box;     this is the default setting, here it adds on the height of the content, adds on the padding and the border
+     box-sizing: border-box;        //sets the height of the input to the desired value, and then removes the space it needs for the border and the padding, and distributes the rest of the space to the content.
+}
+
 html {
     font-size: 62.5%;
 }
 
 body {
+    color : $dark-grey;
     font-family: Helvetica, Arial, Helvetica, sans-serif ;
     font-size: $s-size;
+    line-height: 1.6;
 }
 
 button {
